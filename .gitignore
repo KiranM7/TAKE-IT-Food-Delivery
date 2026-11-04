@@ -1,0 +1,41 @@
+# Secrets and environment files
+.env
+.env.*
+!.env.example
+**/application-local.properties
+**/application-prod.properties
+**/application-secret.properties
+**/secrets/
+**/*secret*
+**/*credentials*
+
+# Frontend dependencies and build
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Backend build output
+backend/target/
+backend/build/
+
+# Java logs
+*.log
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local databases and backups
+*.db
+*.sqlite
+*.sqlite3
+*.bak
+*.backup
