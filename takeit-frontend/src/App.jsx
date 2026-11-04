@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
 import RestaurantMenuPage from "./pages/RestaurantMenuPage";
@@ -21,7 +21,7 @@ import OwnerEditDishPage from "./pages/OwnerEditDishPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/TAKE-IT-Food-Delivery">
       <Routes>
         <Route path="/" element={<HomePage />} />
 
@@ -78,12 +78,12 @@ function App() {
                   Page not found
                 </h1>
 
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   className="mt-5 inline-block rounded-xl bg-orange-500 px-5 py-3 font-bold text-white"
                 >
                   Back to home
-                </a>
+                </Link>
               </div>
             </main>
           }
