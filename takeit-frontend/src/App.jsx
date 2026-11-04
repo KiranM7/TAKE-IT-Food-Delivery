@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
@@ -16,20 +17,20 @@ import AdminDashboard from "./pages/AdminDashboard";
 import AdminOrdersPage from "./pages/AdminOrdersPage";
 import OwnerEditDishPage from "./pages/OwnerEditDishPage";
 
-
-
-
 function App() {
   return (
     <BrowserRouter basename="/TAKE-IT-Food-Delivery">
       <Routes>
+        {/* Home */}
         <Route path="/" element={<HomePage />} />
 
+        {/* Restaurant */}
         <Route
           path="/restaurant/:restaurantId"
           element={<RestaurantMenuPage />}
         />
 
+        {/* Owner */}
         <Route
           path="/owner/orders"
           element={<OwnerOrdersPage />}
@@ -38,6 +39,11 @@ function App() {
         <Route
           path="/owner/dishes"
           element={<OwnerDishesPage />}
+        />
+
+        <Route
+          path="/owner/dishes/edit"
+          element={<OwnerEditDishPage />}
         />
 
         <Route
@@ -50,25 +56,31 @@ function App() {
           element={<OwnerRestaurantsPage />}
         />
 
+        {/* Cart and Authentication */}
         <Route path="/cart" element={<CartPage />} />
-
         <Route path="/login" element={<LoginPage />} />
-
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-
         <Route path="/register" element={<RegisterPage />} />
 
+        {/* Orders and Checkout */}
         <Route path="/checkout" element={<CheckoutPage />} />
-
         <Route path="/orders" element={<OrdersPage />} />
+        <Route
+          path="/orders/:orderId"
+          element={<OrderDetailsPage />}
+        />
 
-        <Route path="/orders/:orderId" element={<OrderDetailsPage />} />
+        {/* Admin */}
+        <Route
+          path="/admin/dashboard"
+          element={<AdminDashboard />}
+        />
 
-        <Route path="/admin/orders" element={<AdminOrdersPage />} />
+        <Route
+          path="/admin/orders"
+          element={<AdminOrdersPage />}
+        />
 
-        <Route path="/owner/dishes/edit" element={<OwnerEditDishPage />} />
-
-
+        {/* 404 Page */}
         <Route
           path="*"
           element={
